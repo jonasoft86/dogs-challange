@@ -1,4 +1,5 @@
 import { useState , useEffect} from "react";
+import Buscador from "./shared/components/Buscador";
 import { ApiException } from "./shared/services/api/ApiException";
 import { IBreeds , BreedsService } from "./shared/services/api/breeds/BreedsService";
 
@@ -20,6 +21,8 @@ function App() {
   return (
     <div className="container">
       <h1><img src="favicon.png" alt="logo dog" id="logo" />DOGS Ceo Challange</h1>
+
+      <Buscador />
     </div>
   );
 }
