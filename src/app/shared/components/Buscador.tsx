@@ -1,11 +1,23 @@
 import Select from 'react-select';
 
 const colourOptions = [
-    { value: 'all', label: 'All' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
+    { value: 'all', label: 'all' },
+    { value: 'strawberry', label: 'strawberry' },
+    { value: 'vanilla', label: 'vanilla' },
+    { value: 'red', label: 'red' },
+    { value: 'blue', label: 'Blue' },
+    { value: 'uno', label: 'uno' },
+    { value: 'dos', label: 'dos' },
+    { value: 'tres', label: 'tres' },
+    { value: 'cuato', label: 'cuato' },
+    { value: 'cinco', label: 'cinco' },
     { value: 'red', label: 'Red' },
-    { value: 'blue', label: 'Blue' }
+    { value: 'blue', label: 'Blue' },
+    { value: 'uno', label: 'uno' },
+    { value: 'dos', label: 'dos' },
+    { value: 'tres', label: 'tres' },
+    { value: 'cuato', label: 'cuato' },
+    { value: 'cinco', label: 'cinco' }
 ]
 
 interface State {
@@ -15,8 +27,13 @@ interface State {
     readonly isRtl: boolean;
     readonly isSearchable: boolean;
 }
-  
-const Buscador = () => {
+
+/*
+interface IBreeds {
+ breedValues : [];
+}
+*/
+const Buscador = ( breedValues: any) => {
 
     const state: State = {
         isClearable: true,
@@ -25,6 +42,8 @@ const Buscador = () => {
         isRtl: false,
         isSearchable: true,
     }
+
+    //console.log(breedValues.breedValues)
 
     const { isClearable, isSearchable, isDisabled, isLoading, isRtl } = state;
 
@@ -35,14 +54,14 @@ const Buscador = () => {
                 <Select
                     className="basic-single p-3" 
                     classNamePrefix="Select"
-                    defaultValue={colourOptions[0]}
+                    defaultValue={breedValues.breedValues[0]}
                     isDisabled={isDisabled}
                     isLoading={isLoading}
                     isClearable={isClearable}
                     isRtl={isRtl}
                     isSearchable={isSearchable}
                     name="color"
-                    options={colourOptions}
+                    options={breedValues.breedValues}
                     theme={(theme) => ({
                         ...theme,
                         borderRadius: 0,

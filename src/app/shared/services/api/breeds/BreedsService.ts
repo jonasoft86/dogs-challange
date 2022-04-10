@@ -1,11 +1,17 @@
 import { ApiException } from "../ApiException";
 import { Api } from "../ApiConfig";
 
+/*
 export interface IBreeds {
-  breeds: [];
+  [key: string] : string[]
+  status: string;
+}
+*/
+export type BreedsListResponse = {
+  [key: string] : string[]
 }
 
-const getAll = async (): Promise<IBreeds[] | ApiException> => {
+const getAll = async (): Promise<BreedsListResponse | ApiException> => {
     try {
       const { data } = await Api().get('/breeds/list/all');
       return data;
